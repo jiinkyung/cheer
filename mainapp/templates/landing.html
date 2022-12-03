@@ -83,7 +83,7 @@
                             {% if tag.name == "app" or tag.name == "web" or tag.name == "python" or tag.name == "c" or tag.name == "java" or tag.name == "c++" or tag.name == "kotlin" or tag.name == "django" or tag.name == "node.js" or tag.name == "spring boot" or tag.name == "swift" or tag.name == "react" %}
                             <a href="{% url 'tag_page' tag %}">
                                 <button class="tag_btn">
-                                    <b>#{{ tag }}</b>
+                                    <b>{{ tag }}</b>
                                 </button>
                             </a>
                             {% endif %}
@@ -101,14 +101,14 @@
                     {% for p in post %}
                     <div class="col">
                         <div class="card shadow-sm">
-                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #fff;">
                             <img class="bd-placeholder-img card-img-top" vgwidth="100%" height="225" src="{{ p.img.url }}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                             focusable="false" >
                             <title>Placeholder</title>
-                            <text><b>{{ p.title }}</b></text><br>
-                            <text><button class="category_btn1"><b>{{ p.category }}</b></button></text><br>
+                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #000;">
+                            <b>{{ p.title }}</b></text><br>
+                            <button class="category_btn1"><b>{{ p.category }}</b></button><br>
                             {% for tag in p.Tag.iterator %}
-                                <text><button class="tag_btn1"><b>#{{ tag }}</b></button></text>
+                                <button class="tag_btn1"><b>#{{ tag }}</b></button>
                             {% endfor %}
                             </a>
                         </div>

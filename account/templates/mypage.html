@@ -42,14 +42,14 @@
                                     {% for p in user.scrap_name.all %}
                                     <div class="col">
                                         <div class="card shadow-sm">
-                                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #fff;">
+                                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #000;">
                                             <img class="bd-placeholder-img card-img-top" vgwidth="100%" height="225" src="{{ p.img.url }}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                             focusable="false" >
                                             <title>Placeholder</title>
-                                            <text><b>{{ p.title }}</b></text><br>
-                                            <text><button class="category_btn1"><b>{{ p.category }}</b></button></text><br>
+                                            <b>{{ p.title }}</b><br>
+                                            <button class="category_btn1"><b>{{ p.category }}</b></button><br>
                                             {% for tag in p.Tag.iterator %}
-                                                <text><button class="tag_btn1"><b>#{{ tag }}</b></button></text>
+                                                <button class="tag_btn1"><b>#{{ tag }}</b></button>
                                             {% endfor %}
                                             </a>
                                         </div>
@@ -64,20 +64,19 @@
                     <div class="album py-5 bg-black">
                         <div class="container">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
                                 <div class="col">
                                     <div class="card shadow-sm">
+                                        <a href="{% url 'board_detail' user.vote.pk %}" style="color: #000;">
                                         <img class="bd-placeholder-img card-img-top" vgwidth="100%" height="225" src="{{ user.vote.img.url }}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                         focusable="false" >
-                                        <text><b>{{ user.vote.title }}</b></text><br>
-                                        <text><button class="category_btn1"><b>{{ user.vote.category }}</b></button></text><br>
+                                        <b>{{ user.vote.title }}</b><br>
+                                        <button class="category_btn1"><b>{{ user.vote.category }}</b></button><br>
                                         {% for tag in user.vote.Tag.iterator %}
-                                            <text><button class="tag_btn1"><b>#{{ tag }}</b></button></text>
+                                            <button class="tag_btn1"><b>#{{ tag }}</b></button>
                                         {% endfor %}
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
