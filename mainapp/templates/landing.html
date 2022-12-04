@@ -101,7 +101,7 @@
                     {% for p in post %}
                     <div class="col">
                         <div class="card shadow-sm">
-                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #000;">
+                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #000; text-decoration:none">
                             <img class="bd-placeholder-img card-img-top" vgwidth="100%" height="250" src="{{ p.img.url }}" width="100" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                             focusable="false" >
                             <title>Placeholder</title>
@@ -110,7 +110,7 @@
                             <a href="{{ p.category.get_absolute_url }}">
                             <button class="category_btn1"><b>{{ p.category }}</b></button></a><br>
                             {% for tag in p.Tag.iterator %}
-                                <a href="{{ tag.get_absolute_url }}">
+                                <a href="{{ tag.get_absolute_url }}" class="text-decoration-none">
                                 <button class="tag_btn1"><b>#{{ tag }}</b></button>
                                 </a>
                             {% endfor %}
