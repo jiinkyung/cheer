@@ -17,7 +17,10 @@
 <body>
 
     {% include 'flow.html' %}
-    {% include 'navbar.html' %}
+    <div class="container">
+        {% include 'navbar.html' %}
+    </div>
+
 
     <br>
     <div class="container"  style="font-family: 'Noto Sans KR', sans-serif;">
@@ -30,19 +33,19 @@
 
                     {% if user.is_authenticated %}
 
-                        <h6 class="text-center" style="color: #000; font-weight: bold; font-size: 1.7em; padding-bottom: 15px;">
+                        <h6 class="text-center" style="color: #fff; font-weight: bold; font-size: 1.7em; padding-bottom: 15px;">
                             {{ user.name }}님, CHEER 전시회에 방문하신 것을 환영합니다!
                         </h6>
 
-                      <hr style="background: #000; height: 2px; border: 0;">
-                      <h5 style="color: #000; padding-left: 1.3em;">스크랩 목록</h5>
+                      <hr style="background: #fff; height: 2px; border: 0;"><br>
+                      <h5 style="color: #fff; padding-left: 1.3em;">스크랩 목록</h5>
                         <div class="album py-5 bg-black">
                             <div class="container">
                                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                                     {% for p in user.scrap_name.all %}
                                     <div class="col">
                                         <div class="card shadow-sm">
-                                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #000;">
+                                            <a href="{% url 'board_detail' pk=p.pk %}" style="color: #fff;">
                                             <img class="bd-placeholder-img card-img-top" vgwidth="100%" height="225" src="{{ p.img.url }}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                             focusable="false" >
                                             <title>Placeholder</title>
@@ -60,7 +63,10 @@
                         </div>
                         <br>
 
-                        <h5 style="color: #000;  padding-left: 1.3em;">투표내역</h5>
+                        <hr style="background: #fff; height: 1px; border: 0;"><br>
+
+
+                        <h5 style="color: #fff;  padding-left: 1.3em;">투표내역</h5>
                     <div class="album py-5 bg-black">
                         <div class="container">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">

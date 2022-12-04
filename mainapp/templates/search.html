@@ -19,7 +19,9 @@
 </head>
 <body>
     {% include 'flow.html' %}
-    {% include 'navbar.html' %}
+    <div class="container">
+        {% include 'navbar.html' %}
+    </div>
 
 
 {% if post %}
@@ -64,7 +66,7 @@
 
 
 
-        <h1 style="text-align: center; margin: 10%; font-size: 1em;">
+        <h1 class="" style="text-align: center; margin: 10%; font-size: 1em;">
             '{{ search }}'라는 게시물은 존재하지 않습니다.
         </h1>
     </div>

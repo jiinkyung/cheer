@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHEER 투표ㅛ</title>
+  <title>CHEER 투표</title>
   <link href="{% static 'mainapp/bootstrap4/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="screen">
     <link href="{% static 'mainapp/css/customstyles.css' %}" rel="stylesheet" />
     <link href="{% static 'mainapp/css/customstyles2.css' %}" rel="stylesheet" />
@@ -15,7 +15,9 @@
 </head>
 <body>
 {% include 'flow.html' %}
-{% include 'navbar.html' %}
+<div class="container">
+    {% include 'navbar.html' %}
+</div>
 <br>
     <div class="container" style="font-family: 'Noto Sans KR', sans-serif;">
         <div class="row">
@@ -55,12 +57,12 @@
 
                         <br>
                         {% if user.vote != None %}
-                                <p><input class="btn btn btn-block btn-sm"
+                                <p style="margin-top: 3em;"><input class="btn btn btn-block btn-sm"
                                           type="submit" value="투표하기" onclick="alert('투표를 이미 완료하였습니다.')"
                                         style="background-color: #981b45; color: white;" ></input></p>
 
                         {% else %}
-                                <p><input class="btn btn btn-block btn-sm"
+                                <p style="margin-top: 3em;"><input class="btn btn btn-block btn-sm"
                                           type="submit" value="투표하기" onclick="alert('투표를 완료했습니다.')"
                                     style="background-color: #981b45; color: white;"></input></p>
 
@@ -68,7 +70,8 @@
                         </form>
                     {% else %}
 
-                      <a role="button" class="btn btn-block btn-sm" href="{% url 'login' %}" style="background-color:#852845;color:white">
+                      <a role="button" class="btn btn-block btn-sm" href="{% url 'login' %}"
+                         style="background-color:#852845; color:white; margin-top: 5em;">
                         로그인</a>
                     {% endif %}
                     <br>

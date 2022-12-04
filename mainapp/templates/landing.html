@@ -83,7 +83,7 @@
                             {% if tag.name == "app" or tag.name == "web" or tag.name == "python" or tag.name == "c" or tag.name == "java" or tag.name == "c++" or tag.name == "kotlin" or tag.name == "django" or tag.name == "node.js" or tag.name == "spring boot" or tag.name == "swift" or tag.name == "react" %}
                             <a href="{% url 'tag_page' tag %}">
                                 <button class="tag_btn">
-                                    <b>{{ tag }}</b>
+                                    <b>#{{ tag }}</b>
                                 </button>
                             </a>
                             {% endif %}

@@ -10,6 +10,8 @@
     <link href="{% static 'mainapp/css/customstyles.css' %}" rel="stylesheet" />
     <link href="{% static 'mainapp/css/customstyles2.css' %}" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/3385a22710.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Nanum+Myeongjo:wght@400;800&family=Noto+Sans+KR:wght@500;700;900&family=Noto+Serif+KR&family=Shrikhand&family=Song+Myung&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <style css>
@@ -21,22 +23,26 @@
 
 
 {% include 'flow.html' %}
-{% include 'navbar.html' %}
+<div class="container">
+    {% include 'navbar.html' %}
+</div>
 <br>
 
-    <div class="container">
+    <div class="container"  style="font-family: 'Noto Sans KR', sans-serif;">
         <div class="row">
         <div class="col align-self-center">
             <div class="card mb-6" id="signup_card">
             <br>
             <div class="container">
                 <div class="card-body">
-                    <h4 class="text-center" id="title">
-                        투표 결과<br><br>
+                    <h4 class="text-center" id="title"  style="color:#981b45">
+                        투표 결과<br>
                     </h4>
                     {% if user.is_authenticated %}
                         <div id="sub_title">
-                            <h6 class="text-center">{{ user.name | upper }}님, 투표 결과를 확인하세요!</h6><br>
+                            <h6 class="text-center"  style="color:#fff; font-size: 1.1em;">
+                                {{ user.name | upper }}님, 투표 결과를 확인하세요!
+                            </h6><br>
                         </div>
                         <br>
                         <table class="table table-striped">
@@ -51,10 +57,13 @@
                             <tr>
                                 <td>
                                     <a href="{% url 'board_detail' pk=p.pk %}">
-                                        <span class="vote_title card-title" style="color:#852845">{{ p.team_name }} <br>{{ p.title }}</span>
+                                        <span class="vote_title card-title" style="color:#852845">
+                                            [{{ p.title }}] <br>
+                                            - {{ p.team_name }}
+                                        </span>
                                     </a>
                                 </td>
-                                <td>{{ p.count }}</td>
+                                <td style="color: white">{{ p.count }}</td>
                             </tr>
                           {% endfor %}
                           </tbody>
