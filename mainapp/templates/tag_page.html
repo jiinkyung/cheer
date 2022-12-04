@@ -10,12 +10,15 @@
     <link href="{% static 'account/css/customstyles2.css' %}" rel="stylesheet" />
     <link href="{% static 'account/css/customstyles.css' %}" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/3385a22710.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Nanum+Myeongjo:wght@400;800&family=Noto+Sans+KR:wght@500;700;900&family=Noto+Serif+KR&family=Shrikhand&family=Song+Myung&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
-
     {% include 'flow.html' %}
-    {% include 'navbar.html' %}
+    <div class="container">
+        {% include 'navbar.html' %}
+    </div>
 
     <br>
     <div class="container">
@@ -26,10 +29,11 @@
             <div class="container">
                 <div class="card-body">
                     <h4 class="text-center" id="title">
-                        {% if tag %}<span class="badge bg-secondary float-end">#{{ tag }}</span>{% endif %}
+                        {% if tag %}<span class="badge float-end tag_btn1">#{{ tag }}</span>{% endif %}
                     </h4>
                     <br>
-                    <hr>                     
+                    <hr style="background: #f0f0f0; height: 2px; border: 0;">
+
 
                         <div class="album py-5 bg-black">
                             <div class="container">

@@ -7,24 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block head_title %}CHEER - {% if category %}Category : {{ category|upper }}{% endif %} {% endblock %}</title>
   <link href="{% static 'account/bootstrap4/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="screen">
-    <link href="{% static 'account/css/customstyles2.css' %}" rel="stylesheet" />
-    <link href="{% static 'account/css/customstyles.css' %}" rel="stylesheet" />
+  <link href="{% static 'account/css/customstyles2.css' %}" rel="stylesheet" />
+  <link href="{% static 'account/css/customstyles.css' %}" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/3385a22710.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&family=Nanum+Myeongjo:wght@400;800&family=Noto+Sans+KR:wght@500;700;900&family=Noto+Serif+KR&family=Shrikhand&family=Song+Myung&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
-<style css>
+<style>
     #category_title{
         font-size:0.9rem;
-            }
+    }
 
     #category_content{
         font-size:0.9rem;
-            }
+    }
+
 </style>
 
     {% include 'flow.html' %}
-    {% include 'navbar.html' %}
+    <div class="container">
+        {% include 'navbar.html' %}
+    </div>
 
     <br>
     <div class="container">
@@ -35,11 +40,12 @@
             <div class="container">
                 <div class="card-body">
                     <h4 class="text-center" id="title">
-                        {% if category %}<span class="badge bg-secondary float-end">{{ category }}</span>{% endif %}
+                        {% if category %}<span class="badge float-end category_btn1">{{ category }}</span>{% endif %}
                     </h4>
                     <br>
-                    <hr>
-                    <div class="album py-5 bg-black">
+                    <hr style="background: #af596a; height: 2px; border: 0;">
+
+                    <div class="album py-5">
                         <div class="container">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                                 {% for p in post_list %}

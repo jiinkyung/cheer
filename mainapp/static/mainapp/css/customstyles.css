@@ -187,6 +187,8 @@ body {background-color: #000}
     margin: 4px 10px;
     cursor: pointer;
     border-radius: 16px;
+    background-color: #f0f0f0;
+
 }
 .tag_btn1 {
     border: none;
@@ -199,6 +201,7 @@ body {background-color: #000}
     cursor: pointer;
     border-radius: 10px;  
     font-size:80%;
+    background-color: #f0f0f0;
 }
 .category_btn1 {
     border: none;
@@ -241,7 +244,9 @@ body {background-color: #000}
 @media (min-width: 700px) {
     .bd-placeholder-img-lg {font-size: 3.5rem;}
 }
-
+#signup_card {
+    background-color: black
+}
 /* 페이지네이션
 .pagination {
     display: flex;
